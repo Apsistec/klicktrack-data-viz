@@ -1,0 +1,7 @@
+{
+  "name": "kt-data-viz",
+  "integrations": {
+    "capacitor": {}
+  },
+  "type": "angular"
+}
