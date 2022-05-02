@@ -1,3 +1,15 @@
-<p>
-  bar-chart-vertical works!
-</p>
+<div class="container">
+  <ion-card >
+    <ion-card-content>
+      <h4 class="card-title">Bar Chart</h4>
+      <canvas
+        baseChart
+        [data]="salesData"
+        [type]="'bar'"
+        [options]="chartOptions"
+      >
+      </canvas>
+    </ion-card-content>
+  </ion-card>
+</div>
+

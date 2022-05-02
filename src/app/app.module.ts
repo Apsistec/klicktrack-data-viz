@@ -8,6 +8,7 @@ import { AppComponent } from './app.component';
 import { AppRoutingModule } from './app-routing.module';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { NgChartsModule } from 'ng2-charts';
+import { SharedModule } from './components/shared.module';
 
 @NgModule({
   declarations: [AppComponent],
@@ -18,6 +19,8 @@ import { NgChartsModule } from 'ng2-charts';
     AppRoutingModule,
     BrowserAnimationsModule,
     NgChartsModule,
+    SharedModule,
+
   ],
   providers: [{ provide: RouteReuseStrategy, useClass: IonicRouteStrategy }],
   bootstrap: [AppComponent],
