@@ -1,6 +1,4 @@
 import { ActivatedRoute, NavigationEnd, Router } from '@angular/router';
-/* eslint-disable no-underscore-dangle */
-/* eslint-disable @typescript-eslint/member-ordering */
 import { Component, OnInit } from '@angular/core';
 
 import { filter, map } from 'rxjs/operators';
@@ -11,12 +9,6 @@ interface Category {
   children?: Category[];
 }
 
-interface ExampleFlatNode {
-  expandable: boolean;
-  name: string;
-  url: string;
-  level: number;
-}
 @Component({
   selector: 'app-root',
   templateUrl: 'app.component.html',

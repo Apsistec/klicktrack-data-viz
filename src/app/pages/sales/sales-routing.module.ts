@@ -14,7 +14,7 @@ const routes: Routes = [
     loadChildren: () => import('./sales-summary/sales-summary.module').then( m => m.SalesSummaryPageModule)
   },
   {
-    path: 'BudtenderSalesPage                                                                                     ',
+    path: 'budtender',
     loadChildren: () => import('./budtender-sales/budtender-sales.module').then( m => m.BudtenderSalesPageModule)
   },
   {
