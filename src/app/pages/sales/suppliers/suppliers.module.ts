@@ -1,11 +1,10 @@
-import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
+import { NgModule } from '@angular/core';
 import { FormsModule } from '@angular/forms';
-
 import { IonicModule } from '@ionic/angular';
+import { SharedModule } from 'src/app/components/shared.module';
 
 import { SuppliersPageRoutingModule } from './suppliers-routing.module';
-
 import { SuppliersPage } from './suppliers.page';
 
 @NgModule({
@@ -13,7 +12,8 @@ import { SuppliersPage } from './suppliers.page';
     CommonModule,
     FormsModule,
     IonicModule,
-    SuppliersPageRoutingModule
+    SuppliersPageRoutingModule,
+    SharedModule,
   ],
   declarations: [SuppliersPage]
 })

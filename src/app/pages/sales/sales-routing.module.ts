@@ -1,7 +1,7 @@
-import { BudtenderSalesPage } from './budtender-sales/budtender-sales.page';
 import { NgModule } from '@angular/core';
-import { Routes, RouterModule } from '@angular/router';
+import { RouterModule, Routes } from '@angular/router';
 
+import { BudtenderSalesPage } from './budtender-sales/budtender-sales.page';
 import { SalesPage } from './sales.page';
 
 const routes: Routes = [

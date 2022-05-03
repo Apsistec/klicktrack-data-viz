@@ -9,7 +9,7 @@ const routes: Routes = [
   },
   {
     path: 'dashboard',
-    loadChildren: () => import('./pages/dashboard/dashboard.module').then( m => m.DashboardPageModule)
+    loadChildren: () => import('./pages/home/home.module').then( m => m.HomePageModule)
   },
   {
     path: 'discounts',
@@ -28,7 +28,7 @@ const routes: Routes = [
     loadChildren: () => import('./pages/inventory/inventory.module').then( m => m.InventoryPageModule)
   },
   {
-    path: '',
+    path: '**',
     redirectTo: '/dashboard',
     pathMatch: 'full'
   },

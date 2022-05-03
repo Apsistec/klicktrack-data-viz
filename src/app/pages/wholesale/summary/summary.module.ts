@@ -1,11 +1,10 @@
-import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
+import { NgModule } from '@angular/core';
 import { FormsModule } from '@angular/forms';
-
 import { IonicModule } from '@ionic/angular';
+import { SharedModule } from 'src/app/components/shared.module';
 
 import { SummaryPageRoutingModule } from './summary-routing.module';
-
 import { SummaryPage } from './summary.page';
 
 @NgModule({
@@ -13,8 +12,9 @@ import { SummaryPage } from './summary.page';
     CommonModule,
     FormsModule,
     IonicModule,
-    SummaryPageRoutingModule
+    SharedModule,
+    SummaryPageRoutingModule,
   ],
-  declarations: [SummaryPage]
+  declarations: [SummaryPage],
 })
 export class SummaryPageModule {}

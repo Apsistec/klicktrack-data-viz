@@ -1,39 +1,48 @@
-import { ChartLabel } from 'ng2-charts';
-import { Component, OnInit, ViewChild } from '@angular/core';
-import { ChartData, ChartOptions, Color } from 'chart.js';
+import { Component, NgModule, OnInit } from '@angular/core';
+import { BrowserModule } from '@angular/platform-browser';
+import { NgxChartsModule } from '@swimlane/ngx-charts';
+import { multi } from './data';
 
 @Component({
   selector: 'app-lines-chart',
   templateUrl: './lines-chart.component.html',
-  styleUrls: ['./lines-chart.component.css'],
+  styleUrls: ['./lines-chart.component.scss'],
 })
-export class LinesChartComponent implements OnInit{
-  public lineChartData: ChartData[] = [
-    { data: [65, 59, 80, 81, 56, 55, 40], label: 'Series A' },
-  ];
-  public lineChartLabels: Label[] = [
-    'January',
-    'February',
-    'March',
-    'April',
-    'May',
-    'June',
-    'July',
-  ];
-  public lineChartOptions: ChartOptions & { annotation: any } = {
-    responsive: true,
+export class LinesChartComponent implements OnInit {
+  multi!: any[];
+  view: any = [700, 300];
+
+  // options
+  legend = true;
+  showLabels = true;
+  animations = true;
+  xAxis = true;
+  yAxis = true;
+  showYAxisLabel = true;
+  showXAxisLabel = true;
+  xAxisLabel = 'Year';
+  yAxisLabel = 'Population';
+  timeline = true;
+
+  colorScheme: any = {
+    domain: ['#5AA454', '#E44D25', '#CFC0BB', '#7aa3e5', '#a8385d', '#aae3f5'],
   };
-  // public lineChartColors: Color[] = [
 
-  //     {borderColor: 'black'},
-  //     {backgroundColor: 'rgba(255,0,0,0.3)'},
+  constructor() {
+    Object.assign(this, { multi });
+  }
 
-  // ];
-  public lineChartLegend = true;
-  public lineChartType = 'line';
-  public lineChartPlugins = [];
+  onSelect(data: any): void {
+    console.log('Item clicked', JSON.parse(JSON.stringify(data)));
+  }
 
-  constructor() {}
+  onActivate(data: any): void {
+    console.log('Activate', JSON.parse(JSON.stringify(data)));
+  }
+
+  onDeactivate(data: any): void {
+    console.log('Deactivate', JSON.parse(JSON.stringify(data)));
+  }
 
   ngOnInit() {}
 }

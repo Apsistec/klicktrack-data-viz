@@ -1,11 +1,11 @@
-import { ActivatedRoute, NavigationEnd, Router } from '@angular/router';
+import { ActivatedRoute, NavigationEnd, Router, UrlSegment } from '@angular/router';
 import { Component, OnInit } from '@angular/core';
 
 import { filter, map } from 'rxjs/operators';
 
 interface Category {
   name: string;
-  url: string;
+  url?: string;
   children?: Category[];
 }
 
@@ -18,9 +18,8 @@ export class AppComponent implements OnInit {
   categories: Category[] = [
     {
       name: 'Sales',
-      url: '/sales',
       children: [
-        { name: 'Summary', url: 'sales/summary' },
+        { name: 'Sales Summary', url: 'sales/summary' },
         { name: 'Budtender', url: 'sales/budtender' },
         { name: 'Brands', url: 'sales/brands' },
         { name: 'Suppliers', url: 'sales/suppliers' },
@@ -29,10 +28,10 @@ export class AppComponent implements OnInit {
     },
     {
       name: 'Discounts',
-      url: '/discounts',
+
       children: [
         {
-          name: 'Summary ',
+          name: 'Discount Summary ',
           url: '/discounts/summary',
         },
         {
@@ -47,10 +46,10 @@ export class AppComponent implements OnInit {
     },
     {
       name: 'Inventory',
-      url: '/inventory',
+
       children: [
         {
-          name: 'Summary ',
+          name: 'Inventory Summary ',
           url: '/inventory/summary',
         },
         {
@@ -65,7 +64,7 @@ export class AppComponent implements OnInit {
     },
     {
       name: 'Wholesale',
-      url: '/wholesale',
+
       children: [
         {
           name: 'Summary ',
@@ -83,8 +82,8 @@ export class AppComponent implements OnInit {
     },
   ];
 
-  currentRoute;
-  urlPath;
+  currentRoute!: ActivatedRoute;
+  urlPath!: UrlSegment[];
   path = [];
 
   constructor(public router: Router, private activatedRoute: ActivatedRoute) {}
@@ -96,7 +95,7 @@ export class AppComponent implements OnInit {
         this.currentRoute = this.activatedRoute.root;
           this.activatedRoute.url.pipe(map(path => {
           this.urlPath = path;
-          this.path = this.urlPath.split('/');
+
         }));
       });
   }
